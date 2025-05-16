@@ -1,0 +1,107 @@
+/* src/components/AppManagementView/AIs/Agents.module.css */
+
+.agentsContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5vh; /* Space between sections and button */
+  padding: 2vmin; /* Padding inside the container */
+  /* Inherit background/color from parent AppManagementView */
+}
+
+.agentsContainer h3 {
+  margin-top: 0;
+  margin-bottom: 1vh;
+  color: #ffffff; /* White heading text */
+  text-align: center;
+  font-size: 1.3em;
+}
+
+.addNewButton {
+  padding: 1vh 1.5vw;
+  background-color: #5a5a5a;
+  color: #ffffff;
+  border: none;
+  border-radius: 0.4vmin;
+  cursor: pointer;
+  align-self: center; /* Center the button */
+  transition: background-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  font-size: 1em;
+  box-shadow: 0 0.2vh 0.5vh rgba(0, 0, 0, 0.3);
+  margin-bottom: 2vh; /* Space below the button */
+}
+
+.addNewButton:hover {
+  background-color: #6a6a6a;
+  box-shadow: 0 0.3vh 0.7vh rgba(0, 0, 0, 0.4);
+}
+
+.addNewButton:active {
+  background-color: #7a7a7a;
+  box-shadow: 0 0.1vh 0.3vh rgba(0, 0, 0, 0.2);
+}
+
+/* --- Styles for the expandable sections --- */
+.agentSection {
+  border: 0.1vmin solid #333; /* Border for the section */
+  border-radius: 0.6vmin; /* Rounded corners */
+  background-color: #282828; /* Darker background for sections */
+  overflow: hidden; /* Hide overflowing content, important for collapse transition */
+}
+
+.sectionHeader {
+  display: flex;
+  justify-content: space-between; /* Space out title and icon */
+  align-items: center; /* Vertically align items */
+  padding: 1.5vmin; /* Padding inside the header */
+  background-color: #3a3a3a; /* Background for header */
+  cursor: pointer; /* Indicate clickable */
+  font-weight: bold;
+  color: #ffffff; /* White text */
+  transition: background-color 0.2s ease-in-out;
+}
+
+.sectionHeader:hover {
+  background-color: #4a4a4a; /* Slightly lighter background on hover */
+}
+
+.sectionHeader h4 {
+  margin: 0; /* Remove default margin */
+  font-size: 1em; /* Smaller heading for section header */
+  color: #ffffff; /* White text */
+}
+
+.sectionHeader span {
+  font-size: 0.8em; /* Smaller size for the toggle indicator */
+  margin-left: 1vmin; /* Space between title and indicator */
+}
+
+.sectionContent {
+  max-height: 0; /* Start with 0 height for collapsed state */
+  overflow-y: hidden; /* Hide vertical overflow */
+  transition: max-height 0.3s ease-in-out; /* Smooth transition for expansion */
+  padding: 0 1.5vmin; /* Add horizontal padding, no vertical padding when collapsed */
+}
+
+.expanded {
+  max-height: 500px; /* Set a max-height large enough to contain the content when expanded */
+  /* You might need to adjust this value based on the expected height of your lists */
+  padding-top: 1.5vmin; /* Add vertical padding when expanded */
+  padding-bottom: 1.5vmin; /* Add vertical padding when expanded */
+}
+
+.collapsed {
+  max-height: 0; /* Ensure height is 0 when collapsed */
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.agentsList {
+  list-style: none; /* Remove default list bullets */
+  padding: 0; /* Remove default padding */
+  margin: 0; /* Remove default margin */
+  display: flex;
+  flex-direction: column;
+  gap: 1vh; /* Space between individual agent items */
+}
+
+/* Styles for individual agent items are in Agent.module.css */

@@ -1,0 +1,87 @@
+/* src/components/AppManagementView/NodeMaps/NodeMap/NodeMap.module.css */
+
+.nodeMapItem {
+  display: flex;
+  flex-direction: row; /* Arrange children horizontally */
+  align-items: center; /* Vertically align items in the center */
+  justify-content: space-between; /* Space out the content div and the button */
+  margin-bottom: 1vh; /* Responsive vertical margin */
+  background-color: #545454;
+  width: 80%; /* Responsive width */
+  justify-self: center;
+  border: 0.2vmin solid #9a9a9a74; /* Responsive border thickness */
+  border-radius: 0.5vmin; /* Responsive border radius */
+  box-shadow: 0.2vmin 0.2vmin 1vmin 0vmin #0000005e; /* Responsive box-shadow */
+  transition: all 0.2s ease;
+  cursor: pointer;
+  user-select: none; /* Prevent text selection */
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10+ */
+  padding: 1.5vmin; /* Add padding to the container */
+  box-sizing: border-box; /* Include padding in width */
+
+  /* --- Positioning context for the favorite indicator --- */
+  position: relative; /* Set position to relative */
+  /* --- End Positioning context --- */
+}
+
+/* Style for the selected nodemap item */
+.nodeMapItem.selected {
+  border-color: #646cff; /* Permanent border color for selected item */
+  box-shadow: 0.2vmin 0.2vmin 1.5vmin 0vmin #646cff40; /* Example: subtle glow */
+}
+
+.nodeMapItem:hover {
+  filter: brightness(110%);
+  transform: translateY(-0.3vh) translateX(0.3vh); /* Responsive transform */
+  border-color: #646cff9d;
+}
+
+/* Style the div containing the text content (name, created, goal) */
+/* Allow this div to take up the available space */
+.nodeMapItem > div {
+  flex-grow: 1; /* Allow this div to take up the available space */
+}
+
+.nodeMapItem h4 {
+  margin-top: 0;
+  margin-bottom: 0.5vh; /* Responsive vertical margin */
+  color: #ffffff;
+  font-size: 1.1em; /* Responsive font size */
+}
+
+.nodeMapItem p {
+  margin: 0.5vh 0; /* Responsive vertical margin */
+  font-size: 0.9em; /* Responsive font size */
+  color: #cccccc;
+}
+
+/* --- Styling for the Favorite Indicator --- */
+.favoriteIndicator {
+  position: absolute;
+  top: 0.5vmin;
+  right: 0.5vmin;
+
+  font-size: 2em;
+  cursor: pointer;
+  transition: transform 0.1s ease-in-out, color 0.2s ease-in-out; /* Add color to transition */
+  z-index: 1;
+  padding: 0.5vmin;
+  color: #9a9a9a; /* Default color for the outline star (not favorited) */
+}
+
+.favoriteIndicator:hover {
+  transform: scale(1.2);
+}
+
+.favoriteIndicator:active {
+  transform: scale(0.9);
+}
+
+/* --- Rule for the filled (favorited) star --- */
+.favoritedStar {
+  color: #ffd700; /* Gold color for favorited star */
+}
+/* --- End Rule --- */
+
+/* Add styles for other elements within the nodemap item if needed later */

@@ -1,0 +1,51 @@
+.viewSwitcherContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 1vmin;
+  padding: 1.5vmin;
+  background-color: #1e1e1e;
+  border: 0.2vmin solid #333;
+  border-radius: 0.8vmin 0 0 0.8vmin;
+  /* Added styles for positioning */
+  position: fixed; /* Fix the position to the viewport */
+  right: 0px; /* Position to the right of the 20vw side menu */
+  width: 7vw; /* Take up the remaining width */
+  top: 0; /* Align to the top edge */
+  box-sizing: border-box; /* Include padding in width */
+  z-index: 10; /* Ensure it stays above other content if needed */
+}
+
+.viewButton {
+  flex-grow: 1;
+  padding: 1vmin;
+  border: 0.2vmin solid #555;
+  text-align: center;
+  border-radius: 0.4vmin;
+  cursor: pointer;
+  background-color: #3a3a3a;
+  color: #cccccc;
+  font-size: 0.9em;
+  transition: background-color 0.3s ease, box-shadow 0.2s ease-in-out;
+  box-sizing: border-box;
+  box-shadow: 0 0.2vh 0.5vh rgba(0, 0, 0, 0.3);
+}
+
+.viewButton:hover:not(:disabled) {
+  background-color: #4a4a4a;
+  box-shadow: 0 0.3vh 0.7vh rgba(0, 0, 0, 0.4);
+}
+
+.viewButton.active {
+  background-color: #5a5a5a;
+  color: #ffffff;
+  border-color: #888888;
+  box-shadow: 0 0.1vh 0.3vh rgba(0, 0, 0, 0.2);
+}
+
+.viewButton:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+  background-color: #3a3a3a;
+  color: #888888;
+  box-shadow: none;
+}

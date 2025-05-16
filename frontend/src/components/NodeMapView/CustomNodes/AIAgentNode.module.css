@@ -1,0 +1,62 @@
+/* src/components/NodeMapView/CustomNodes/AIAgentNode.module.css */
+
+/* Basic styling for the custom AI Agent node container */
+.aiAgentNode {
+  border: 1px solid #555; /* Darker border */
+  border-radius: 0.6vmin; /* Rounded corners */
+  background-color: #3a3a3a; /* Dark background */
+  color: #e0e0e0; /* Light text color */
+  padding: 1.5vmin; /* Padding inside the node */
+  min-width: 150px; /* Minimum width for the node */
+  box-shadow: 0 0.2vh 0.5vh rgba(0, 0, 0, 0.4); /* Subtle shadow */
+  text-align: center; /* Center text content */
+  font-family: sans-serif; /* Use a standard font */
+}
+
+/* Styling for the node content area */
+.nodeContent {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5vh; /* Space between label and details */
+  align-items: center; /* Center content vertically */
+}
+
+/* Styling for the main node label (Agent Name) */
+.nodeLabel {
+  font-size: 1.1em;
+  font-weight: bold;
+  color: #ffffff; /* White text for the label */
+  margin-bottom: 0.5vh; /* Space below the label */
+}
+
+/* Styling for the node details (Type, Model, etc.) */
+.nodeDetails {
+  font-size: 0.9em;
+  color: #cccccc; /* Lighter text for details */
+}
+
+.nodeDetails p {
+  margin: 0; /* Remove default paragraph margin */
+  line-height: 1.4; /* Improve readability */
+}
+
+/* Styling for the react-flow handles */
+/* These styles override the default handle appearance */
+.handle {
+  width: 10px; /* Size of the handle */
+  height: 10px; /* Size of the handle */
+  background: #888888; /* Color of the handle */
+  border: 1px solid #555; /* Border for the handle */
+  border-radius: 50%; /* Make handles round */
+}
+
+/* Optional: Style handles differently based on type (target/source) or position */
+/*
+.react-flow__handle.react-flow__handle-top {
+  background: #ff0000; // Example: Red for top handles
+}
+
+.react-flow__handle.react-flow__handle-bottom {
+  background: #00ff00; // Example: Green for bottom handles
+}
+*/

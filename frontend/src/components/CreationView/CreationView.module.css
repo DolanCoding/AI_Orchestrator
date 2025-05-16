@@ -1,0 +1,285 @@
+/* src/components/CreationView/CreationView.module.css */
+
+.CreationViewContainer {
+  display: flex;
+  flex-direction: column;
+  padding: 2vmin; /* Responsive padding */
+  background-color: #1e1e1e; /* Very dark background */
+  color: #cccccc; /* Light grey text color */
+  min-height: 100%; /* Ensure it takes at least full height of its parent */
+  box-sizing: border-box; /* Include padding in dimensions */
+  /* No fixed positioning or width here, as it's in the main content area */
+  width: 60vw;
+  left: 30vw;
+  height: 90%;
+  position: relative;
+}
+
+.CreationViewContainer > select {
+  margin-top: 0;
+  margin-bottom: 2vh; /* Vertical margin */
+  font-size: 1.5em; /* Larger heading */
+  color: #ffffff; /* White text for heading */
+  text-align: center;
+  border: none;
+  outline: none;
+  background-color: #3a3a3a;
+  padding: 1vmin; /* Add padding to select */
+  border-radius: 0.4vmin; /* Rounded corners for select */
+}
+
+.creationForm {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5vh; /* Space between form groups and sections */
+  padding: 2vmin; /* Padding inside the form */
+  border: 0.1vmin solid #333; /* Dark theme border */
+  border-radius: 0.8vmin; /* Rounded corners */
+  background-color: #282828; /* Darker background for the form */
+  flex-grow: 1; /* Allow the form to grow and fill the container */
+}
+
+/* --- Top Section Layout --- */
+.topSection {
+  display: flex;
+  flex-direction: row; /* Arrange children horizontally */
+  gap: 2vmin; /* Space between the two columns */
+  min-height: 20vh; /* Reduced minimum height */
+  align-items: stretch; /* Keep stretch to make flex items match height */
+}
+
+.imageUploadArea {
+  flex-basis: 40%; /* Set base width to 40% */
+  display: flex;
+  flex-direction: column;
+  gap: 1vmin; /* Space between image elements */
+  align-items: center; /* Center items horizontally */
+  min-height: 0; /* Needed for flex children to size correctly */
+  /* Height is managed by parent align-items: stretch */
+}
+
+.mapImagePreview {
+  width: 15vmin; /* Set a fixed width for the image */
+  height: 15vmin; /* Set a fixed height for the image - adjust as needed */
+  border: 1px solid #9a9a9a;
+  border-radius: 0.4vmin; /* Rounded corners for image */
+  object-fit: cover; /* Ensure the image covers the fixed area without distortion */
+  min-height: 0; /* Needed for flex children to size correctly */
+  overflow: hidden; /* Add overflow hidden to the image itself */
+  margin-bottom: 1vmin; /* Space below the image */
+}
+
+.imageUploadArea input[type="file"] {
+  /* Style the file input if needed, often hidden and triggered by a button/label */
+  width: 100%; /* Still take full width of its container */
+  padding: 1vmin;
+  border: 0.1vmin solid #555;
+  border-radius: 0.4vmin;
+  box-sizing: border-box;
+  font-size: 1em;
+  background-color: #3a3a3a;
+  color: #e0e0e0;
+}
+
+.nameGoalArea {
+  flex-basis: 60%; /* Set base width to 60% */
+  display: flex;
+  flex-direction: column; /* Stack name and goal vertically */
+  gap: 1.5vh; /* Space between name and goal form groups */
+  flex-grow: 1; /* Allow nameGoalArea to grow */
+  min-height: 0; /* Needed for flex children to size correctly */
+  /* Height is managed by parent align-items: stretch */
+}
+
+/* Adjust formGroup within nameGoalArea */
+.nameGoalArea .formGroup {
+  margin-bottom: 0; /* Remove bottom margin between name and goal */
+  flex-grow: 1; /* Allow form groups within nameGoalArea to grow */
+  min-height: 0; /* Needed for flex children to size correctly */
+  display: flex; /* Make formGroup a flex container */
+  flex-direction: column; /* Stack label and input vertically */
+}
+
+.nameGoalArea .formGroup label {
+  margin-bottom: 0.5vh; /* Space below label */
+}
+
+.nameGoalArea .formGroup input[type="text"] {
+  width: 100%; /* Inputs take full width of their container */
+  padding: 1vmin;
+  border: 0.1vmin solid #555;
+  border-radius: 0.4vmin;
+  box-sizing: border-box;
+  font-size: 1em;
+  background-color: #3a3a3a;
+  color: #e0e0e0;
+  /* Removed flex-grow: 1; - Name input will not grow */
+  min-height: 0; /* Needed for flex children to size correctly */
+}
+
+.nameGoalArea .formGroup textarea {
+  width: 100%; /* Inputs take full width of their container */
+  padding: 1vmin;
+  border: 0.1vmin solid #555;
+  border-radius: 0.4vmin;
+  box-sizing: border-box;
+  font-size: 1em;
+  background-color: #3a3a3a;
+  color: #e0e0e0;
+  flex-grow: 2; /* Increased flex-grow for goal textarea */
+  min-height: 0; /* Needed for flex children to size correctly */
+  resize: none; /* Disable resizing */
+  overflow-y: auto; /* Enable vertical scrolling */
+}
+
+/* --- Bottom Section Layout --- */
+.descriptionArea {
+  flex-grow: 1; /* Allow the description area to grow in height */
+  display: flex; /* Use flex to manage textarea height */
+  flex-direction: column;
+  min-height: 20vh; /* Reduced minimum height */
+}
+
+.descriptionArea .formGroup {
+  margin-bottom: 0; /* Remove margin below description form group */
+  flex-grow: 1; /* Allow form group to grow */
+  min-height: 0; /* Needed for flex children to size correctly */
+}
+
+.descriptionArea .formGroup label {
+  margin-bottom: 0.5vh; /* Space below label */
+}
+
+/* Specific styling for the Description textarea */
+.descriptionTextarea {
+  width: 100%; /* Textarea takes full width */
+  padding: 1vmin;
+  border: 0.1vmin solid #555;
+  border-radius: 0.4vmin;
+  box-sizing: border-box;
+  font-size: 1em;
+  background-color: #3a3a3a;
+  color: #e0e0e0;
+  resize: none; /* Disable resizing */
+  flex-grow: 1; /* Allow textarea to grow in height */
+  min-height: 10vh; /* Minimum height for description textarea */
+  overflow-y: auto; /* Enable vertical scrolling */
+}
+
+/* --- General Form Styling (Apply to elements not in specific sections if needed) --- */
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1vh; /* Space between form groups */
+}
+
+.formGroup label {
+  display: block;
+  margin-bottom: 0.5vh; /* Space below label */
+  font-weight: bold;
+  font-size: 1em;
+  color: #cccccc;
+}
+
+.formGroup input[type="text"],
+.formGroup select,
+.formGroup textarea {
+  padding: 1vmin;
+  border: 0.1vmin solid #555;
+  border-radius: 0.4vmin;
+  font-size: 1em;
+  box-sizing: border-box;
+  background-color: #3a3a3a;
+  color: #e0e0e0;
+}
+
+.formGroup select {
+  appearance: none;
+  background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23cccccc%22%20d%3D%22M287%2C114.7L159.2%2C25.1c-5.8-5.8-15.2-5.8-21%2C0L5.4%2C114.7c-7.8%2C7.8-1.4%2C21.2%2C10.5%2C21.2h255.9C288.4%2C135.8%2C294.8%2C122.5%2C287%2C114.7z%22%2F%3E%3C%2Fsvg%3E");
+  background-repeat: no-repeat;
+  background-position: right 1vmin top 50%;
+  background-size: 1.5vmin auto;
+  padding-right: 3vmin;
+}
+
+.submitButton {
+  padding: 1.5vh 2vw;
+  background-color: #5a5a5a;
+  color: #ffffff;
+  border: none;
+  border-radius: 0.4vmin;
+  cursor: pointer;
+  align-self: center;
+  transition: background-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  font-size: 1.1em;
+  box-shadow: 0 0.2vh 0.5vh rgba(0, 0, 0, 0.3);
+}
+
+.submitButton:hover {
+  background-color: #6a6a6a;
+  box-shadow: 0 0.3vh 0.7vh rgba(0, 0, 0, 0.4);
+}
+
+.submitButton:active {
+  background-color: #7a7a7a;
+  box-shadow: 0 0.1vh 0.3vh rgba(0, 0, 0, 0.2);
+}
+
+.success {
+  color: green;
+}
+
+.error {
+  color: red;
+}
+
+/* --- Existing row1, image, horizontal styles - Review and potentially remove/integrate --- */
+/* These styles were in the previous version and might conflict or be redundant */
+/* with the new .topSection, .imageUploadArea, .nameGoalArea styles. */
+/* Consider removing or integrating them into the new structure. */
+/*
+.row1 {
+    display: flex;
+    flex-direction: row;
+    gap: 2vmin;
+    width: 100%;
+}
+
+.row1 > .image {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1vmin;
+}
+
+.row1 > .image > img {
+    width: 10vmin;
+    height: 10vmin;
+    border: 1px solid #9a9a9a;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.row1 > .horizontal {
+    flex-grow: 1;
+}
+
+.row1 > .horizontal > label {
+    display: block;
+    margin-bottom: 0.5vh;
+    font-weight: bold;
+    font-size: 1em;
+    color: #cccccc;
+}
+
+.row1 > .horizontal > input[type="text"] {
+    width: 100%;
+    padding: 1vmin;
+    border: 0.1vmin solid #555;
+    border-radius: 0.4vmin;
+    box-sizing: border-box;
+    font-size: 1em;
+    background-color: #3a3a3a;
+    color: #e0e0e0;
+}
+*/

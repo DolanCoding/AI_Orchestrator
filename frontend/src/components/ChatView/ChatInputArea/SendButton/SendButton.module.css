@@ -1,0 +1,21 @@
+/* src/components/SendButton/SendButton.module.css */
+.sendButton {
+  padding: 10px 20px;
+  background-color: #007bff; /* Primary button color */
+  color: white;
+  border: none;
+  border-radius: 20px; /* Rounded corners */
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.sendButton:hover:not(:disabled) {
+  background-color: #0056b3; /* Darker on hover */
+}
+
+.sendButton:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+  opacity: 0.6;
+}

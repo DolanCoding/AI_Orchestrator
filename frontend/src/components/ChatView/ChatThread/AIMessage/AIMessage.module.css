@@ -1,0 +1,88 @@
+/* src/components/AIMessage/AIMessage.module.css */
+.aiMessageContainer {
+  display: flex;
+  justify-content: flex-start; /* Align AI messages to the left */
+  align-items: flex-start; /* Align items to the top */
+  gap: 10px; /* Space between avatar (if used) and bubble */
+}
+
+.aiAvatar {
+  width: 30px;
+  height: 30px;
+  background-color: #ccc;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 12px;
+  color: #555;
+  flex-shrink: 0; /* Prevent avatar from shrinking */
+}
+
+.messageContentWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  max-width: 70%; /* Limit bubble width */
+}
+
+.messageBubble {
+  background-color: #e9e9eb; /* Distinct color for AI messages */
+  color: #333;
+  padding: 10px 15px;
+  border-radius: 15px 15px 15px 0; /* Rounded corners, flat on bottom-left */
+  word-wrap: break-word; /* Break long words */
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  margin-bottom: 5px; /* Space between bubble and actions */
+}
+
+.senderName {
+  font-size: 12px;
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #555;
+}
+
+.messageContent {
+  margin-bottom: 5px; /* Space between content and timestamp */
+}
+
+.timestamp {
+  font-size: 10px;
+  color: #777; /* Grey color for timestamp */
+  text-align: left;
+}
+
+.loadingIndicator {
+  display: inline-block;
+  animation: pulse 1s infinite; /* Simple loading animation */
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.choiceMadeIndicator {
+  font-size: 12px;
+  color: #777;
+  margin-top: 5px;
+  font-style: italic;
+}
+
+.errorMessage {
+  background-color: #f8d7da; /* Light red background for errors */
+  color: #721c24; /* Dark red text */
+  border: 1px solid #f5c6cb;
+  border-radius: 4px;
+  padding: 10px;
+  margin-top: 10px;
+  font-size: 14px;
+}

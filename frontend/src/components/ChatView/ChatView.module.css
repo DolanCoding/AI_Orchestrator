@@ -1,0 +1,32 @@
+.chatViewContainer {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 0;
+  left: 30vw;
+  width: 60vw;
+  bottom: 0vh;
+  max-width: 60vw;
+  /* margin: 0 auto; */
+  border: 0.3vmin solid #444;
+  border-radius: 0.8vmin;
+  overflow: hidden;
+  box-sizing: border-box;
+  background-color: #1e1e1e;
+  color: #cccccc;
+  justify-self: center;
+}
+
+.chatThreadArea {
+  flex-grow: 1;
+  overflow-y: auto;
+  padding: 1.5vmin;
+  background-color: #282828;
+}
+
+.chatInputArea {
+  flex-shrink: 0;
+  padding: 1.5vmin;
+  background-color: #1e1e1e;
+  border-top: 0.1vmin solid #444;
+}

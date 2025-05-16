@@ -1,0 +1,35 @@
+/* src/components/AppManagementView/AIs/Agent/Agent.module.css */
+
+.agentItem {
+  /* Basic styling for the list item */
+  background-color: #3a3a3a; /* Darker background */
+  border: 1px solid #555; /* Border */
+  border-radius: 0.4vmin; /* Rounded corners */
+  padding: 1.5vmin; /* Padding */
+  margin-bottom: 1vh; /* Space between items */
+  cursor: pointer; /* Indicate clickable */
+  transition: background-color 0.2s ease-in-out; /* Smooth transition on hover */
+  color: #e0e0e0; /* Light text color */
+  user-select: none; /* Prevent text selection */
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10+ */
+}
+
+.agentItem:hover {
+  background-color: #4a4a4a; /* Slightly lighter background on hover */
+}
+
+.agentItem h4 {
+  margin-top: 0;
+  margin-bottom: 0.5vh; /* Space below heading */
+  color: #ffffff; /* White heading text */
+  font-size: 1.1em;
+}
+
+.agentItem p {
+  margin: 0.5vh 0; /* Space between paragraphs */
+  font-size: 0.9em;
+  color: #cccccc; /* Lighter text color for details */
+}
+
+/* Add styles for buttons or other elements within the agent item if needed later */

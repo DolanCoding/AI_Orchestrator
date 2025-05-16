@@ -1,0 +1,7 @@
+.chatThreadContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 10px; /* Space between messages */
+  overflow-y: auto; /* Ensure scrolling is handled by this container */
+  height: 100%; /* Take full height of parent (AIChatView's chatThreadArea) */
+}

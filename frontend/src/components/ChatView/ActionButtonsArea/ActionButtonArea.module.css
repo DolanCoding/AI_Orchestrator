@@ -1,0 +1,7 @@
+/* src/components/ActionButtonArea/ActionButtonArea.module.css */
+.ActionButtonAreaContainer {
+  display: flex;
+  flex-wrap: wrap; /* Allow buttons to wrap to the next line */
+  gap: 8px; /* Space between buttons */
+  margin-top: 5px; /* Space above the action buttons */
+}

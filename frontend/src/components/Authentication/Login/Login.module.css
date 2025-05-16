@@ -1,0 +1,78 @@
+/* Styling for the login form */
+.loginForm {
+  display: flex;
+  flex-direction: column;
+  padding: 2vmin;
+  width: 80%; /* Take full width of parent container */
+  gap: 1.5vh; /* Space between form groups */
+  border: 0.1vmin solid #333; /* Dark theme border */
+  border-radius: 0.8vmin; /* Rounded corners */
+  background-color: #282828; /* Darker background for the form */
+  height: 55vh;
+  position: relative;
+}
+
+.loginForm h2 {
+  text-align: center;
+  margin-bottom: 2vh; /* Responsive margin */
+  color: #ffffff; /* White text for heading */
+  font-size: 1.8em; /* Keep relative font size */
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1vh; /* Space between form groups */
+  position: relative;
+}
+
+.formGroup label {
+  display: block; /* Label on its own line */
+  margin-bottom: 0.5vh; /* Space below label */
+  font-weight: bold;
+  font-size: 1em; /* Keep relative font size */
+  color: #cccccc; /* Light grey text */
+}
+
+.formGroup input[type="text"],
+.formGroup input[type="password"] {
+  width: 100%; /* Input takes full width of its container */
+  padding: 1vmin; /* Responsive padding */
+  border: 0.1vmin solid #555; /* Dark theme border */
+  border-radius: 0.4vmin; /* Rounded corners */
+  box-sizing: border-box; /* Include padding and border in dimensions */
+  font-size: 1em; /* Keep relative font size */
+  background-color: #3a3a3a; /* Darker input background */
+  color: #e0e0e0; /* Lighter text color for input */
+}
+
+.loginForm button[type="submit"] {
+  padding: 2vmin; /* Responsive padding */
+  border: none;
+  border-radius: 0.4vmin; /* Rounded corners */
+  background-color: #5a5a5a; /* Dark theme button color */
+  color: white;
+  cursor: pointer;
+  font-size: 1.1em; /* Keep relative font size */
+  transition: background-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  box-shadow: 0 0.2vh 0.5vh rgba(0, 0, 0, 0.3); /* Subtle shadow */
+  align-self: center;
+}
+
+.loginForm button[type="submit"]:hover {
+  background-color: #6a6a6a; /* Lighter dark theme on hover */
+  box-shadow: 0 0.3vh 0.7vh rgba(0, 0, 0, 0.4); /* Slightly larger shadow on hover */
+}
+
+.loginForm button[type="submit"]:active {
+  background-color: #7a7a7a; /* Even lighter dark theme when active */
+  box-shadow: 0 0.1vh 0.3vh rgba(0, 0, 0, 0.2); /* Smaller shadow when active */
+}
+
+.error {
+  color: red;
+}
+
+.success {
+  color: green;
+}

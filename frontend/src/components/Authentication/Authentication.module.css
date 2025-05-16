@@ -1,0 +1,55 @@
+/* Styling for the main authentication container */
+.authenticationContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2vmin; /* Responsive padding */
+  padding-bottom: calc(5vh + 2em + 1.1em + 3vh);
+  border: 0.1vmin solid #333; /* Dark theme border */
+  border-radius: 0.8vmin; /* Rounded corners */
+  max-width: 30vw; /* Responsive max width */
+  left: calc(50% - 15vw);
+  position: relative;
+  background-color: #1e1e1e; /* Very dark background */
+  box-shadow: 0 0.2vh 0.4vh rgba(0, 0, 0, 0.4); /* Darker shadow */
+  color: #cccccc; /* Light grey text color */
+  text-align: start;
+}
+
+.authenticationContainer h1 {
+  margin-bottom: 2vh; /* Responsive margin */
+  color: #ffffff; /* White text for heading */
+  font-size: 2em; /* Keep relative font size */
+}
+
+.authenticationContainer button {
+  margin-bottom: 3vh; /* Responsive margin */
+  padding: 1.5vh 2vw; /* Responsive padding */
+  border: none;
+  border-radius: 0.4vmin; /* Rounded corners */
+  background-color: #4a4a4a; /* Dark theme button color */
+  color: white;
+  cursor: pointer;
+  font-size: 1.1em; /* Keep relative font size */
+  transition: background-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  box-shadow: 0 0.2vh 0.5vh rgba(0, 0, 0, 0.3); /* Subtle shadow */
+}
+
+.authenticationContainer button:hover {
+  background-color: #6a6a6a; /* Lighter dark theme on hover */
+  box-shadow: 0 0.3vh 0.7vh rgba(0, 0, 0, 0.4); /* Slightly larger shadow on hover */
+}
+
+.authenticationContainer button:active {
+  background-color: #7a7a7a; /* Even lighter dark theme when active */
+  box-shadow: 0 0.1vh 0.3vh rgba(0, 0, 0, 0.2); /* Smaller shadow when active */
+}
+
+/* Note: Specific styles for the Login and Register components are in their own CSS modules */
+.error {
+  color: red;
+}
+
+.success {
+  color: green;
+}

@@ -1,0 +1,29 @@
+/* src/components/ActionButton/ActionButton.module.css */
+.actionButton {
+  background-color: #e9e9eb; /* Neutral background, distinct from send button */
+  color: #333;
+  border: 1px solid #ccc;
+  padding: 8px 15px;
+  border-radius: 15px; /* Rounded pill shape */
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s ease, opacity 0.3s ease;
+}
+
+.actionButton:hover:not(:disabled) {
+  background-color: #d0d0d0; /* Darker on hover */
+}
+
+.actionButton:disabled {
+  background-color: #f0f0f0;
+  color: #999;
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.actionButton.loading {
+  /* Style for loading state, e.g., change color or add spinner placeholder */
+  background-color: #b0c4de; /* Lighter blue or grey */
+  color: #555;
+  cursor: progress; /* Indicate processing */
+}

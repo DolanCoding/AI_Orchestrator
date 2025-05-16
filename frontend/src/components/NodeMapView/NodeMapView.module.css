@@ -1,0 +1,119 @@
+/* src/components/NodeMapView/NodeMapView.module.css */
+
+.nodeMapViewContainer {
+  /* Define a size for the container so react-flow can render */
+  width: 80vw;
+  /* Adjust height to accommodate button and potential padding/margin */
+  /* Use 100vh and let flexbox manage distribution */
+  height: 100vh;
+  /* Add flexbox properties to arrange children vertically */
+  display: flex;
+  flex-direction: column;
+  /* Add other styling as needed */
+  background-color: #242424; /* Match background */
+  position: relative; /* Needed for absolute positioning of saveControls */
+  left: 20vw;
+  /* Add some padding if you want space around the map and button */
+  box-sizing: border-box; /* Include padding in the element's total width and height */
+}
+
+/* Style for the React Flow wrapper */
+/* This ensures the map takes up the available space above the button */
+.reactFlowWrapper {
+  flex-grow: 1; /* Allow the React Flow container to grow and take available space */
+  /* Apply flex-grow directly to the ReactFlow component in NodeMapView.jsx */
+  /* Ensure this does NOT have a high z-index that would cover the save controls */
+  z-index: 1; /* Set a lower z-index than the save controls */
+}
+
+/* --- Styling for the Save Controls Wrapper --- */
+.saveControls {
+  position: absolute; /* Position relative to the nodeMapViewContainer */
+  bottom: 5vh; /* 5vh distance from the bottom */
+  left: 50%; /* Center horizontally */
+  transform: translateX(-50%); /* Adjust for centering */
+  z-index: 10; /* Higher z-index than the React Flow wrapper */
+  display: flex;
+  flex-direction: column; /* Stack button and messages vertically */
+  align-items: center; /* Center items horizontally within the wrapper */
+  gap: 0.5vmin; /* Space between button and messages */
+  width: auto; /* Allow width to adjust to content */
+  padding: 1vmin; /* Add some padding around the controls */
+  /* Optional: Add a subtle background or border to the controls area */
+  /* background-color: rgba(40, 40, 40, 0.8); */
+  /* border-radius: 0.5vmin; */
+}
+/* --- End Styling for the Save Controls Wrapper --- */
+
+/* Style for the Save Map button */
+.saveMapButton {
+  /* Basic styling for the button */
+  padding: 1vh 1.5vw; /* Responsive padding */
+  background-color: #5a5a5a; /* Darker background for button */
+  color: #ffffff; /* White text */
+  border: none;
+  border-radius: 0.4vmin; /* Responsive border radius */
+  cursor: pointer;
+  /* align-self: center; Removed as parent flex container handles centering */
+  /* margin-top: 1vmin; Removed as gap in parent flex container handles spacing */
+  transition: background-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  font-size: 1em;
+  box-shadow: 0 0.2vh 0.5vh rgba(0, 0, 0, 0.3);
+  flex-shrink: 0; /* Prevent the button from shrinking */
+  z-index: 100; /* User's requested z-index (can be controlled by parent z-index now) */
+}
+
+.saveMapButton:hover {
+  background-color: #6a6a6a; /* Slightly lighter on hover */
+  box-shadow: 0 0.3vh 0.7vh rgba(0, 0, 0, 0.4);
+}
+
+.saveMapButton:active {
+  background-color: #7a7a7a;
+  box-shadow: 0 0.1vh 0.3vh rgba(0, 0, 0, 0.2);
+}
+
+/* Styles for status messages */
+.saveSuccess,
+.saveError {
+  text-align: center;
+  font-size: 0.9em;
+  /* --- Added for smooth transition --- */
+  opacity: 1; /* Default opacity */
+  max-height: 50px; /* Set a max-height that is likely larger than the message height */
+  overflow: hidden; /* Hide overflow during transition */
+  transition: opacity 0.3s ease-in-out, max-height 0.3s ease-in-out; /* Smooth transition */
+  /* --- End Added --- */
+}
+
+.saveSuccess {
+  color: green; /* Green text for success */
+}
+
+.saveError {
+  color: red; /* Red text for error */
+}
+
+/* Style to hide the message when it's not displayed */
+/* This class will be applied conditionally in the JSX */
+.hiddenMessage {
+  opacity: 0;
+  max-height: 0;
+  /* Ensure no vertical space is taken when hidden */
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+/* You might add custom styles for nodes, edges, minimap, controls here later */
+/* Example: */
+/*
+.react-flow__node {
+  border: 1px solid #555;
+  border-radius: 5px;
+  background-color: #3a3a3a;
+  color: #e0e0e0;
+  padding: 10px;
+}
+*/

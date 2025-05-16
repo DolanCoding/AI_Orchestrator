@@ -1,0 +1,20 @@
+/* src/components/TextInput/TextInput.module.css */
+.textInput {
+  flex-grow: 1; /* Allow input to take available space */
+  padding: 10px 15px;
+  border: 1px solid #ccc;
+  border-radius: 20px; /* Rounded corners for input field */
+  font-size: 16px;
+  outline: none; /* Remove default outline */
+  transition: border-color 0.3s ease;
+}
+
+.textInput:focus {
+  border-color: #007bff; /* Highlight on focus */
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.2); /* Subtle shadow on focus */
+}
+
+.textInput:disabled {
+  background-color: #f0f0f0;
+  cursor: not-allowed;
+}
